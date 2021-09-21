@@ -22,6 +22,27 @@ body{
     padding: 0 15px;
 }
 
+.title {
+    @extend %sans-700;
+    font-size: 32px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    max-width: 9em;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 0.75em;
+    border-bottom: 3px solid currentColor;
+}
+
+.subtitle{
+    @extend %sans-700;
+    font-size: 48px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
 a{
     color: inherit;
     @extend %sans-400;
