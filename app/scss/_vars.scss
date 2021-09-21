@@ -1,0 +1,23 @@
+$accent:#91916C;
+
+%sans-400 {
+    font-family: "NunitoSans-Regular";
+    font-weight: 400;
+}
+
+%sans-700 {
+    font-family: "NunitoSans-Bold";
+    font-weight: 700;
+}
+
+%display{
+    font-family: "PlayfairDisplay-Bold";
+    font-weight: 700;
+}
+
+.title {
+    @extend %sans-700;
+    font-size: 32px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+}

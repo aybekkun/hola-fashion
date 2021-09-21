@@ -1,3 +1,34 @@
+body,html{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 body{
-    
+    @extend %sans-400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #000;
+    letter-spacing: 0.2px;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a{
+    color: inherit;
+    @extend %sans-400;
+    text-decoration: none;
+    letter-spacing: initial;
+}
+
+button{
+    letter-spacing: initial;
 }
