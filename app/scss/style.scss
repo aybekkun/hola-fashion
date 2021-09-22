@@ -26,6 +26,37 @@
         font-size: 20px;
         line-height: 1.35;
     }
+    &__btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 30px;
+        height: 24px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        position: relative;
+        display: none;
+        span{
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+        }
+        &::after,&::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+        }
+        &::after{
+            bottom: 0;
+        }
+        &::before{
+            top: 0;
+        }
+    }
 }
 
 .top {
@@ -64,6 +95,7 @@
 
     &__form {
         display: flex;
+        
     }
 
     &__form-input {
