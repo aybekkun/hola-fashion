@@ -19,7 +19,7 @@ function browsersync() {
     server: {
       baseDir: "app/",
     },
-    notofy: false,
+    notify: false,
   });
 }
 
@@ -38,7 +38,11 @@ function styles() {
 }
 
 function scripts() {
-  return src(["node_modules/jquery/dist/jquery.js", "app/js/main.js"])
+  return src([
+    "node_modules/jquery/dist/jquery.js",
+    "node_modules/slick-carousel/slick/slick.js",
+    "app/js/main.js",
+  ])
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(dest("app/js"))
@@ -61,13 +65,22 @@ function images() {
 }
 
 function build() {
-  return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], {
-    base: "app",
-  }).pipe(dest("dist"));
+  return src(
+    [
+      "app/**/*.html",
+      "app/fonts/*.woff",
+      "app/fonts/*.woff2",
+      "app/css/style.min.css",
+      "app/js/main.min.js",
+    ],
+    {
+      base: "app",
+    }
+  ).pipe(dest("dist"));
 }
 
-function cleanDist(){
-  return del('dist');
+function cleanDist() {
+  return del("dist");
 }
 
 function watching() {
@@ -88,6 +101,6 @@ exports.images = images;
 
 exports.build = series(cleanDist, images, build);
 
-exports.cleanDist =  cleanDist;
+exports.cleanDist = cleanDist;
 
 exports.default = parallel(styles, scripts, browsersync, watching);
